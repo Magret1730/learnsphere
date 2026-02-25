@@ -1,11 +1,11 @@
 package org.codewithmagret.service;
 
+import org.codewithmagret.ReportService;
 import org.codewithmagret.http.ApiClient;
 import org.codewithmagret.model.CoursesByCategory;
 import org.codewithmagret.model.CoursesByStudent;
 import org.codewithmagret.model.InstructorByCourse;
 import org.codewithmagret.model.InstructorsByStudent;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -88,33 +88,6 @@ public class ReportServiceTest {
         assertEquals("Cloud Computing", result.getFirst().categoryName);
         assertEquals(0, result.getFirst().courses.size());
     }
-
-//    @Test
-//    public void getCoursesByCategory_handlesNullCourses() {
-//        String json = """
-//          [
-//            {
-//              "categoryId": 1,
-//              "categoryName": "Cloud Computing",
-//              "courses": null
-//            }
-//          ]
-//        """;
-//
-//        when(apiClient.get(anyString())).thenReturn(json);
-//
-//        List<CoursesByCategory> result = reportService.getCoursesByCategory();
-//
-//        // verify endpoint
-//        ArgumentCaptor<String> urlCaptor = ArgumentCaptor.forClass(String.class);
-//        verify(apiClient).get(urlCaptor.capture());
-//        assertEquals(baseUrl + "/coursesByCategories", urlCaptor.getValue());
-//
-//        // verify parsing
-//        assertEquals(1, result.size());
-//        assertEquals("Cloud Computing", result.getFirst().categoryName);
-//        assertEquals(0, result.getFirst().getCourses().size());
-//    }
 
     @Test
     void getCoursesByStudent_handlesEmptyCourses() {
@@ -250,5 +223,13 @@ public class ReportServiceTest {
         assertEquals("Sarah", result.getFirst().instructors.get(1).firstName);
         assertEquals("Ng", result.getFirst().instructors.get(1).lastName);
         assertEquals("sarah.ng@keyin.ca", result.getFirst().instructors.get(1).email);
+    }
+
+    @Test
+    void throwsHelpfulErrorWhenJsonIsInvalid() {
+        when(apiClient.get(anyString())).thenReturn("not-json");
+
+        RuntimeException ex = assertThrows(RuntimeException.class, () -> reportService.getCoursesByCategory());
+        assertTrue(ex.getMessage().contains("Failed to parse JSON"));
     }
 }

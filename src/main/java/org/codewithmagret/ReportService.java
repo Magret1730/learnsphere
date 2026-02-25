@@ -1,4 +1,4 @@
-package org.codewithmagret.service;
+package org.codewithmagret;
 
 import org.codewithmagret.http.ApiClient;
 import com.fasterxml.jackson.databind.ObjectMapper;
