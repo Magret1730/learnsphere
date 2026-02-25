@@ -20,6 +20,9 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+/**
+ * Unit tests for the ReportService class.
+ */
 @ExtendWith(MockitoExtension.class)
 public class ReportServiceTest {
     @Mock
@@ -28,11 +31,17 @@ public class ReportServiceTest {
     private ReportService reportService;
     private final String baseUrl = "http://localhost:8080/api/v1/reports";
 
+    /**
+     * Sets up the ReportService instance before each test.
+     */
     @BeforeEach
     public void setUp() {
         reportService = new ReportService(apiClient, new com.fasterxml.jackson.databind.ObjectMapper(), baseUrl);
     }
 
+    /**
+     * Tests that getCoursesByCategory calls the correct API endpoint and correctly parses the JSON response.
+     */
     @Test
     public void getCoursesByCategory_callsCorrectEndpoint_andParsesJson() {
         String json = """
@@ -67,6 +76,9 @@ public class ReportServiceTest {
         assertEquals("Data Structures", result.getFirst().courses.getFirst().title);
     }
 
+    /**
+     * Tests that getCoursesByCategory correctly handles an empty courses list in the JSON response.
+     */
     @Test
     public void getCoursesByCategory_handlesEmptyCourses() {
         String json = """
@@ -89,6 +101,9 @@ public class ReportServiceTest {
         assertEquals(0, result.getFirst().courses.size());
     }
 
+    /**
+     * Tests that getCoursesByCategory correctly handles a null courses field in the JSON response.
+     */
     @Test
     void getCoursesByStudent_handlesEmptyCourses() {
         String json = """
@@ -115,6 +130,9 @@ public class ReportServiceTest {
         assertTrue(result.getFirst().courses.isEmpty());
     }
 
+    /**
+     * Tests that getCoursesByStudent correctly handles a null courses field in the JSON response.
+     */
     @Test
     void getCoursesByStudent_handlesNullCourses() {
         String json = """
@@ -152,6 +170,9 @@ public class ReportServiceTest {
         assertEquals(1, result.getFirst().courses.size());
     }
 
+    /**
+     * Tests that getInstructorByCourse correctly parses the instructor object from the JSON response.
+     */
     @Test
     void getInstructorByCourse_parsesInstructorObject() {
         String json = """
@@ -190,6 +211,9 @@ public class ReportServiceTest {
         assertEquals("sarah.ng@keyin.ca", result.getFirst().instructor.email);
     }
 
+    /**
+     * Tests that getInstructorsByStudent correctly parses the list of instructors from the JSON response.
+     */
     @Test
     void getInstructorsByStudent_parsesInstructorList() {
         String json = """
@@ -225,6 +249,9 @@ public class ReportServiceTest {
         assertEquals("sarah.ng@keyin.ca", result.getFirst().instructors.get(1).email);
     }
 
+    /**
+     * Tests that getCoursesByCategory throws a helpful error message when the JSON response is invalid.
+     */
     @Test
     void throwsHelpfulErrorWhenJsonIsInvalid() {
         when(apiClient.get(anyString())).thenReturn("not-json");
