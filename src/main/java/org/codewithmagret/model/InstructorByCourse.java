@@ -4,10 +4,10 @@ package org.codewithmagret.model;
  * DTO for InstructorByCourse report
  */
 public class InstructorByCourse {
-    private Long courseId;
-    private String title;
-    private String code;
-    private SimpleInstructor instructor;
+    public Long courseId;
+    public String title;
+    public String code;
+    public SimpleInstructor instructor;
 
     /**
      * Default constructor for InstructorByCourse. Required for JSON deserialization.

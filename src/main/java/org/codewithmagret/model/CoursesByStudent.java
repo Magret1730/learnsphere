@@ -6,10 +6,10 @@ import java.util.List;
  * DTO for the report of courses by student.
  */
 public class CoursesByStudent {
-    private Long studentId;
-    private String firstName;
-    private String lastName;
-    private List<SimpleCourse> courses;
+    public Long studentId;
+    public String firstName;
+    public String lastName;
+    public List<SimpleCourse> courses;
 
     /**
      * Default constructor for CoursesByStudent. Required for JSON deserialization.
