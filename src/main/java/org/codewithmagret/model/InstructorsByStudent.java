@@ -78,4 +78,29 @@ public class InstructorsByStudent {
      * @param instructors the list of instructors to set
      */
     public void setInstructors(List<SimpleInstructor> instructors) { this.instructors = instructors; }
+
+    /**
+     * Get the full name of the student by combining the first and last names.
+     * If both names are null or empty, it returns a placeholder "-".
+     *
+     * @return the full name of the student or "-" if both names are empty
+     */
+    public String getFullName() {
+        String f = firstName == null ? "" : firstName.trim();
+        String l = lastName == null ? "" : lastName.trim();
+        String name = (f + " " + l).trim();
+        return name.isEmpty() ? "-" : name;
+    }
+
+    /**
+     * Overrides the toString method to provide a string representation of the InstructorsByStudent object.
+     * It includes the student's full name and the number of instructors associated with that student.
+     *
+     * @return a string representation of the InstructorsByStudent object
+     */
+    @Override
+    public String toString() {
+        int count = (instructors == null) ? 0 : instructors.size();
+        return getFullName() + " (" + count + " instructors)";
+    }
 }

@@ -71,4 +71,29 @@ public class CoursesByStudent {
      * @param courses the list of courses taken by the student to set
      */
     public void setCourses(List<SimpleCourse> courses) { this.courses = courses; }
+
+    /**
+     * Returns the full name of the student by combining the first name and last name.
+     * If both names are null or empty, it returns a placeholder "-".
+     *
+     * @return the full name of the student or "-" if both names are empty
+     */
+    public String getFullName() {
+        String f = firstName == null ? "" : firstName.trim();
+        String l = lastName == null ? "" : lastName.trim();
+        String name = (f + " " + l).trim();
+        return name.isEmpty() ? "-" : name;
+    }
+
+    /**
+     * Overrides the toString method to provide a string representation of the CoursesByStudent object.
+     * It includes the full name of the student and the number of courses taken by that student.
+     *
+     * @return a string representation of the CoursesByStudent object
+     */
+    @Override
+    public String toString() {
+        int count = (courses == null) ? 0 : courses.size();
+        return getFullName() + " (" + count + " courses)";
+    }
 }

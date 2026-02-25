@@ -61,4 +61,15 @@ public class SimpleCourse {
      * @param code the code of the course to set
      */
     public void setCode(String code) { this.code = code; }
+
+    /**
+     * Overrides the toString method to provide a string representation of the SimpleCourse object.
+     * It includes the course code and title.
+     *
+     * @return a string representation of the SimpleCourse object
+     */
+    @Override
+    public String toString() {
+        return code + " - " + title;
+    }
 }
