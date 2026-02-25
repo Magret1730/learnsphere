@@ -76,4 +76,28 @@ public class SimpleInstructor {
      * @param email the email of the instructor to set
      */
     public void setEmail(String email) { this.email = email; }
+
+    /**
+     * Utility method to get the full name of the instructor.
+     * It handles null values and trims whitespace.
+     *
+     * @return the full name of the instructor, or "-" if both names are missing
+     */
+    public String getFullName() {
+        String f = firstName == null ? "" : firstName.trim();
+        String l = lastName == null ? "" : lastName.trim();
+        String name = (f + " " + l).trim();
+        return name.isEmpty() ? "-" : name;
+    }
+
+    /**
+     * Overrides the toString method to provide a string representation of the SimpleInstructor object.
+     * It includes the full name and email (if available).
+     *
+     * @return a string representation of the SimpleInstructor object
+     */
+    @Override
+    public String toString() {
+        return getFullName() + (email == null ? "" : " <" + email + ">");
+    }
 }

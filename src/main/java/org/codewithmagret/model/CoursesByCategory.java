@@ -60,4 +60,16 @@ public class CoursesByCategory {
      * @param courses the list of courses in the category to set
      */
     public void setCourses(List<SimpleCourse> courses) { this.courses = courses; }
+
+    /**
+     * Overrides the toString method to provide a string representation of the CoursesByCategory object.
+     * It includes the category name and the number of courses in that category.
+     *
+     * @return a string representation of the CoursesByCategory object
+     */
+    @Override
+    public String toString() {
+        int count = (courses == null) ? 0 : courses.size();
+        return categoryName + " (" + count + " courses)";
+    }
 }

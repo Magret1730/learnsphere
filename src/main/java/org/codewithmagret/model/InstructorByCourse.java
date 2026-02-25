@@ -76,4 +76,27 @@ public class InstructorByCourse {
      * @param instructor the instructor of the course to set
      */
     public void setInstructor(SimpleInstructor instructor) { this.instructor = instructor; }
+
+    /**
+     * Overrides the toString method to provide a string representation of the InstructorByCourse object.
+     * It includes the course code, title, and instructor's full name (or "-" if any of these fields are null).
+     *
+     * @return a string representation of the InstructorByCourse object
+     */
+    @Override
+    public String toString() {
+        String i = (instructor == null) ? "-" : instructor.getFullName();
+        return String.format("%s | %s -> %s", safe(code), safe(title), i);
+    }
+
+    /**
+     * Utility method to safely handle null values for strings.
+     * If the input string is null, it returns a default value ("-").
+     *
+     * @param s the input string to check
+     * @return the original string if it's not null, or "-" if it is null
+     */
+    private String safe(String s) {
+        return s == null ? "-" : s;
+    }
 }
