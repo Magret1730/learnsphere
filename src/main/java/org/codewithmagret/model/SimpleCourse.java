@@ -4,8 +4,22 @@ package org.codewithmagret.model;
  * A simple DTO for course information, used in the StudentCourseDTO to avoid circular references.
  */
 public class SimpleCourse {
+    /**
+     * The ID of the course.
+     * This field is used to uniquely identify the course in the system, allowing us to reference it in other DTOs without including all the details of the course.
+     */
     public Long courseId;
+
+    /**
+     * The title of the course.
+     * This field is used to provide a human-readable name for the course, which can be displayed in the UI or reports.
+     */
     public String title;
+
+    /**
+     * The code of the course.
+     * This field is used to provide a unique code for the course, which can be used for identification and display purposes.
+     */
     public String code;
 
     /**

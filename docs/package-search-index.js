@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"org.codewithmagret"},{"l":"org.codewithmagret.config"},{"l":"org.codewithmagret.http"},{"l":"org.codewithmagret.model"},{"l":"org.codewithmagret.service"},{"l":"org.codewithmagret.ui"}];updateSearchResults();

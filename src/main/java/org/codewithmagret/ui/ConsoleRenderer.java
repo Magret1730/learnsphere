@@ -4,7 +4,7 @@ import org.codewithmagret.model.*;
 
 import java.util.List;
 
-/*
+/**
  * This class is responsible for rendering the results of the queries to the console.
  * It is used by the ReportService after fetching the data from the database.
  * Each method corresponds to a specific report and takes a list of rows as input.
@@ -12,6 +12,13 @@ import java.util.List;
  * The output should be formatted in a clear and readable way, using indentation and bullet points where necessary.
  */
 public class ConsoleRenderer {
+
+    /**
+     * Default constructor for ConsoleRenderer. No initialization is needed.
+     */
+    public ConsoleRenderer() {
+    }
+
     /**
      * This method prints the courses grouped by category to the console.
      * It takes a list of CoursesByCategory objects as input and formats the output in a readable way.

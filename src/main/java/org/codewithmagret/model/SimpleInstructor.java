@@ -1,12 +1,31 @@
 package org.codewithmagret.model;
 
-/*
+/**
  * DTO for representing a simple instructor in reports.
  */
 public class SimpleInstructor {
+    /**
+     * The ID of the instructor.
+     * This field is used to uniquely identify the instructor in the system, allowing us to reference it in other DTOs without including all the details of the instructor.
+     */
     public Long instructorId;
+
+    /**
+     * The first name of the instructor.
+     * This field is used to provide a human-readable name for the instructor, which can be displayed in the UI or reports.
+     */
     public String firstName;
+
+    /**
+     * The last name of the instructor.
+     * This field is used to provide a human-readable name for the instructor, which can be displayed in the UI or reports.
+     */
     public String lastName;
+
+    /**
+     * The email of the instructor.
+     * This field is used to provide contact information for the instructor, which can be displayed in the UI or reports.
+     */
     public String email;
 
     /**

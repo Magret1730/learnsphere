@@ -6,9 +6,28 @@ import java.util.List;
  * DTO for the report of courses by student.
  */
 public class CoursesByStudent {
+    /**
+     * The ID of the student.
+     * This field uniquely identifies each student in the system, allowing us to associate courses with the correct student.
+     */
     public Long studentId;
+
+    /**
+     * The first name of the student.
+     * This field is used to provide a human-readable name for the student, which can be displayed in the UI or reports.
+     */
     public String firstName;
+
+    /**
+     * The last name of the student.
+     * This field is used to provide a human-readable name for the student, which can be displayed in the UI or reports.
+     */
     public String lastName;
+
+    /**
+     * The list of courses taken by the student.
+     * This field contains the courses that the student is enrolled in, allowing us to see which courses are associated with each student.
+     */
     public List<SimpleCourse> courses;
 
     /**

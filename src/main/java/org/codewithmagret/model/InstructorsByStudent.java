@@ -6,9 +6,28 @@ import java.util.List;
  * DTO for the report of instructors by student.
  */
 public class InstructorsByStudent {
+    /**
+     * The ID of the student.
+     * This field uniquely identifies each student in the system, allowing us to associate instructors with the correct student.
+     */
     public Long studentId;
+
+    /**
+     * The first name of the student.
+     * This field is used to provide a human-readable name for the student, which can be displayed in the UI or reports.
+     */
     public String firstName;
+
+    /**
+     * The last name of the student.
+     * This field is used to provide a human-readable name for the student, which can be displayed in the UI or reports.
+     */
     public String lastName;
+
+    /**
+     * The list of instructors associated with the student.
+     * This field contains the instructors that are associated with the student, allowing us to see which instructors are linked to each student.
+     */
     public List<SimpleInstructor> instructors;
 
     /**
