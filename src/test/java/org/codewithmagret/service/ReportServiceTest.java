@@ -1,6 +1,5 @@
 package org.codewithmagret.service;
 
-import org.codewithmagret.ReportService;
 import org.codewithmagret.http.ApiClient;
 import org.codewithmagret.model.CoursesByCategory;
 import org.codewithmagret.model.CoursesByStudent;
