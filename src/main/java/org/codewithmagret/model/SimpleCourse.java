@@ -4,9 +4,9 @@ package org.codewithmagret.model;
  * A simple DTO for course information, used in the StudentCourseDTO to avoid circular references.
  */
 public class SimpleCourse {
-    private Long courseId;
-    private String title;
-    private String code;
+    public Long courseId;
+    public String title;
+    public String code;
 
     /**
      * Default constructor for SimpleCourse. Required for JSON deserialization.

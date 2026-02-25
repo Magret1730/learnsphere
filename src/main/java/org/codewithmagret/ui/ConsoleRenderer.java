@@ -6,7 +6,7 @@ import java.util.List;
 
 /*
  * This class is responsible for rendering the results of the queries to the console.
- * It should be used by the ReportService after fetching the data from the database.
+ * It is used by the ReportService after fetching the data from the database.
  * Each method corresponds to a specific report and takes a list of rows as input.
  * The methods should handle null or empty lists gracefully and print appropriate messages.
  * The output should be formatted in a clear and readable way, using indentation and bullet points where necessary.
@@ -33,7 +33,7 @@ public class ConsoleRenderer {
             String name = cat.getCategoryName() == null ? "-" : cat.getCategoryName();
             int count = (cat.getCourses() == null) ? 0 : cat.getCourses().size();
 
-            System.out.println("\n• " + name + "  (" + count + " course" + (count == 1 ? "" : "s") + ")");
+            System.out.println("\n==>> " + name + "  (" + count + " course" + (count == 1 ? "" : "s") + ")");
 
             if (count == 0) {
                 System.out.println("  - (no courses)");
@@ -68,7 +68,7 @@ public class ConsoleRenderer {
         for (CoursesByStudent s : rows) {
             int count = (s.getCourses() == null) ? 0 : s.getCourses().size();
 
-            System.out.println("\n• " + s.getFullName()
+            System.out.println("\n==>> " + s.getFullName()
                     + "  (" + count + " course" + (count == 1 ? "" : "s") + ")");
 
             if (count == 0) {
@@ -139,7 +139,7 @@ public class ConsoleRenderer {
         for (InstructorsByStudent s : rows) {
             int count = (s.getInstructors() == null) ? 0 : s.getInstructors().size();
 
-            System.out.println("\n• " + s.getFullName()
+            System.out.println("\n==>> " + s.getFullName()
                     + "  (" + count + " instructor" + (count == 1 ? "" : "s") + ")");
 
             if (count == 0) {

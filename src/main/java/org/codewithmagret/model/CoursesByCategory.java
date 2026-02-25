@@ -8,9 +8,9 @@ import java.util.List;
  * It is used as a Data Transfer Object (DTO) to transfer data from the service layer
  */
 public class CoursesByCategory {
-    private Long categoryId;
-    private String categoryName;
-    private List<SimpleCourse> courses;
+    public Long categoryId;
+    public String categoryName;
+    public List<SimpleCourse> courses;
 
     /**
      * Default constructor for CoursesByCategory. Required for JSON deserialization.

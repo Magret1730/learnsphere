@@ -1,7 +1,6 @@
 package org.codewithmagret;
 
 import org.codewithmagret.config.AppConfig;
-import org.codewithmagret.service.ReportService;
 import org.codewithmagret.http.ApiClient;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.codewithmagret.ui.ConsoleRenderer;

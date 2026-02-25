@@ -4,10 +4,10 @@ package org.codewithmagret.model;
  * DTO for representing a simple instructor in reports.
  */
 public class SimpleInstructor {
-    private Long instructorId;
-    private String firstName;
-    private String lastName;
-    private String email;
+    public Long instructorId;
+    public String firstName;
+    public String lastName;
+    public String email;
 
     /**
      * Default constructor for SimpleInstructor. Required for JSON deserialization.
