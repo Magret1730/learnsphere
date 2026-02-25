@@ -8,8 +8,22 @@ import java.util.List;
  * It is used as a Data Transfer Object (DTO) to transfer data from the service layer
  */
 public class CoursesByCategory {
+    /**
+     * The ID of the category.
+     * This field is used to identify the category and is typically a unique identifier in the database.
+     */
     public Long categoryId;
+
+    /**
+     * The name of the category.
+     * This field is used to provide a human-readable name for the category, which can be displayed in the UI or reports.
+     */
     public String categoryName;
+
+    /**
+     * The list of courses in the category.
+     * This field contains the courses that belong to the category, allowing us to see which courses are grouped under each category.
+     */
     public List<SimpleCourse> courses;
 
     /**

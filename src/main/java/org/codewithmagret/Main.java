@@ -11,6 +11,14 @@ import java.util.Scanner;
  * Main class for the application. Provides a console-based menu for viewing various reports.
  */
 public class Main {
+
+    /**
+     * Default constructor for Main class.
+     * Since all members are static, this constructor is not necessary, but it can be included for clarity.
+     */
+    public Main() {
+    }
+
     /**
      * Main method that runs the application.
      *

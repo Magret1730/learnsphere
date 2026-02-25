@@ -11,8 +11,19 @@ import java.util.List;
  * Service class for fetching report data from the API.
  */
 public class ReportService {
+    /**
+     * The ApiClient used to make HTTP requests to the API.
+     */
     private final ApiClient apiClient;
+
+    /**
+     * The ObjectMapper used to parse JSON responses from the API.
+     */
     private final ObjectMapper mapper;
+
+    /**
+     * The base URL of the API.
+     */
     private final String baseUrl;
 
     /**

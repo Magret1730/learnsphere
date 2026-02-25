@@ -4,9 +4,24 @@ package org.codewithmagret.model;
  * DTO for InstructorByCourse report
  */
 public class InstructorByCourse {
+    /**
+     * The ID of the course.
+     */
     public Long courseId;
+
+    /**
+     * The title of the course.
+     */
     public String title;
+
+    /**
+     * The code of the course.
+     */
     public String code;
+
+    /**
+     * The instructor of the course.
+     */
     public SimpleInstructor instructor;
 
     /**
